@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Walk The Past</string>
+
+    <string name="background_description">The background image</string>
+
+    <string name="action_back">Back</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_next">Next</string>
+    <string name="action_resend_code">Resend Code</string>
+    <string name="action_start">Start</string>
+
+
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="password_confirm">Confirm Password</string>
+    <string name="password_new">New Password</string>
+    <string name="password_show">Show Password</string>
+    <string name="code_enter">Enter One-Time-Use Code</string>
+
+
+    <string name="register">Create an Account</string>
+    <string name="login">Login</string>
+    <string name="login_failure">One or more of your account details were incorrect</string>
+    <string name="login_forgotten">Forgotten your login details?</string>
+    <string name="login_remember">Remember me</string>
+    <string name="login_reset_prompt">Enter your email address. We will send you a one-time use code
+        which will be used to verify that you are the one updating the login details of this account.</string>
+    <string name="login_reset_code_prompt">Enter the one-time use code you received, via the email
+        address you previously provided. If you have not received one, either re-enter your email
+        address or press resend code and we will send you another one.</string>
+
+    <string name="map">map</string>
+    <string name="pois">Points Of Interest</string>
+    <string name="pois_visited">Locations Visited: </string>
+    <string name="password_reset">Reset Password</string>
+
+    <string name="account_create">Create Account</string>
+    <string name="email">Email</string>
+
+    <string name="user_existing">Are you an existing user?</string>
+    <string name="user_new">Are you a new user?</string>
+
+    <string name="trails">Trails</string>
+
+    <string name="xml_logout">LogOut</string>
+    <string name="xml_refresh">Refresh</string>
+    <string name="xml_profile">Profile</string>
+    <string name="xml_linked">Linked Accounts</string>
+    <string name="xml_settings">Settings</string>
+</resources>

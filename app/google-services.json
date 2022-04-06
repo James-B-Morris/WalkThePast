@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "228644659487",
+    "project_id": "walk-the-past",
+    "storage_bucket": "walk-the-past.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228644659487:android:102a4c89bc5c29148b902a",
+        "android_client_info": {
+          "package_name": "com.example.walkthepast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228644659487-ntq4v7d4f4uavp9247c32hjo2mls0hva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRZMfjdg9jwpuzqrdCIrT8p23S8XbzAQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228644659487-ntq4v7d4f4uavp9247c32hjo2mls0hva.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

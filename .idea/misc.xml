@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3141025641025641" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/drawable/ic_account.xml" value="0.3141025641025641" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3141025641025641" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/drawable/ic_sync.xml" value="0.3141025641025641" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/activity_main_menu.xml" value="0.28306159420289856" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/activity_map.xml" value="0.22" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/activity_points_of_interest.xml" value="0.2694746376811594" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/activity_reset_login.xml" value="0.2" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/activity_reset_login_code.xml" value="0.2" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/activity_reset_password.xml" value="0.2" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/activity_settings.xml" value="0.22" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/activity_view_trails.xml" value="0.15" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/fragment_map.xml" value="0.23157894736842105" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/layout.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/layout/row_layout.xml" value="0.21" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/menu/layout_loggedout_toolbar.xml" value="0.22" />
+        <entry key="..\:/Users/James Morris/AndroidStudioProjects/WalkThePast/app/src/main/res/menu/layout_toolbar.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
