@@ -6,18 +6,27 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
+    // Authentication Vars
+    private var mAuth = FirebaseAuth.getInstance()
+    private var currentUser = mAuth.currentUser
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         Log.i("MainInfo", "in onCreate")
     }
 
     override fun onStart() {
         super.onStart()
         Log.i("MainInfo", "in onStart")
+        val intent = Intent(this, MainMenuActivity::class.java)
+        
+        if (currentUser != null) {
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {

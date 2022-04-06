@@ -1,10 +1,12 @@
 package com.example.walkthepast
 
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.hardware.input.InputManager
 import android.os.Bundle
 import android.text.InputType
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -76,12 +78,14 @@ class LoginActivity : AppCompatActivity() {
         )
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    Log.d(TAG, "signInWithEmail:Success")
                     update()
                     closeKeyBoard()
                     val intent = Intent(this, MainMenuActivity::class.java)
                     startActivity(intent)
                 }
                 else {
+                    Log.w(TAG, "SignInWithEmail:failure", task.exception)
                     closeKeyBoard()
                     val snackbar =
                         Snackbar.make(view, getString(R.string.login_failure), Snackbar.LENGTH_LONG)
