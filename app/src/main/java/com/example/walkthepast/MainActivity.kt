@@ -16,37 +16,39 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.i("MainInfo", "in onCreate")
+        Log.i(getString(R.string.log_main), "in onCreate")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.i("MainInfo", "in onStart")
+        Log.i(getString(R.string.log_main), "in onStart")
         val intent = Intent(this, MainMenuActivity::class.java)
-        
+
         if (currentUser != null) {
+            Log.i("MainInfo",
+                ("User " + currentUser!!.email.toString() +  " currently logged in"))
             startActivity(intent)
         }
     }
 
     override fun onResume() {
         super.onResume()
-        Log.i("MainInfo", "in onResume")
+        Log.i(getString(R.string.log_main), "in onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.i("MainInfo", "in onPause")
+        Log.i(getString(R.string.log_main), "in onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.i("Main.Info", "in onStop")
+        Log.i(getString(R.string.log_main), "in onStop")
     }
 
     override  fun onDestroy() {
         super.onDestroy()
-        Log.i("MainInfo", "in onDestroy")
+        Log.i(getString(R.string.log_main), "in onDestroy")
     }
 
     override fun onRestart() {

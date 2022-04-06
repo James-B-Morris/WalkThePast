@@ -3,7 +3,6 @@ package com.example.walkthepast
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
-import android.hardware.input.InputManager
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
@@ -23,12 +22,13 @@ class LoginActivity : AppCompatActivity() {
 
     // Authentication Vars
     private var mAuth = FirebaseAuth.getInstance()
-    private var currentUser = mAuth.currentUser
+    private var currUser = mAuth.currentUser
 
     // login deets
-    lateinit var emailText : EditText
-    lateinit var passText : EditText
-    lateinit var loginBtn : Button
+    private val emailPattern = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+"
+    private lateinit var emailText : EditText
+    private lateinit var passText : EditText
+    private lateinit var loginBtn : Button
 
     // switch for making password visible or not
     private var passwordVisible = false
@@ -41,45 +41,39 @@ class LoginActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        emailText = findViewById<EditText>(R.id.usernameTextBox)
-        passText = findViewById<EditText>(R.id.loginPasswordTextBox)
-        loginBtn = findViewById<Button>(R.id.loginBtn)
-    }
-
-    // update UI whenever the app is started
-    override fun onStart() {
-        super.onStart()
-        update()
-    }
-
-    // func which updates the UI with login status
-    fun update() {
-        val currUser  = mAuth.currentUser
-        val currEmail = currUser?.email
-
-        /**
-         * val greetingSpace = findViewById<TextView>(R.id.textBox)
-         * if (currEmail == null) {
-         *      greetingSpace.text = getString(R.string.not_logged_in)
-         * }
-         * else {
-         *      greetingSpace.text getString(R.string. logged_in, currEmail)
-         * }
-         */
+        emailText = findViewById(R.id.usernameTextBox)
+        passText = findViewById(R.id.loginPasswordTextBox)
+        loginBtn = findViewById(R.id.loginBtn)
     }
 
     /**
      * checked to see if login details are valid. If so, logs in the user
      */
     fun loginClick (view: View) {
-        mAuth.signInWithEmailAndPassword(
-            emailText.text.toString(),
-            passText.text.toString()
-        )
+        val email = emailText.text.toString().trim()
+        val pass = passText.text.toString()
+
+        val isEmailEmpty = emailText.text.isEmpty()
+        val isPassEmpty = passText.text.isEmpty()
+        val isEmailValid = email.matches(emailPattern.toRegex())
+
+
+        if ((isEmailEmpty) || (isPassEmpty)) {
+            displayMessage(loginBtn, getString(R.string.login_missing))
+        }
+        else if (!isEmailValid) {
+            displayMessage(loginBtn, getString(R.string.register_invalid_email))
+        }
+        else {
+            login(email, pass)
+        }
+    }
+
+    private fun login(email : String, password : String) {
+        mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "signInWithEmail:Success")
-                    update()
                     closeKeyBoard()
                     val intent = Intent(this, MainMenuActivity::class.java)
                     startActivity(intent)
@@ -87,13 +81,9 @@ class LoginActivity : AppCompatActivity() {
                 else {
                     Log.w(TAG, "SignInWithEmail:failure", task.exception)
                     closeKeyBoard()
-                    val snackbar =
-                        Snackbar.make(view, getString(R.string.login_failure), Snackbar.LENGTH_LONG)
-                    snackbar.show()
+                    displayMessage(loginBtn, getString(R.string.login_failure))
                 }
             }
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -121,6 +111,11 @@ class LoginActivity : AppCompatActivity() {
             passwordVisible = true
             loginBtn.inputType = InputType.TYPE_CLASS_TEXT
         }
+    }
+
+    fun displayMessage(view : View, msg : String) {
+        val snackbar = Snackbar.make(view, msg, Snackbar.LENGTH_LONG)
+        snackbar.show()
     }
 
     /**
