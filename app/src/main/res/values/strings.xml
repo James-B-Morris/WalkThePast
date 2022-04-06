@@ -3,6 +3,7 @@
 
     <string name="background_description">The background image</string>
 
+    ////// PROGRAM ACTIONS //////
     <string name="action_back">Back</string>
     <string name="action_cancel">Cancel</string>
     <string name="action_next">Next</string>
@@ -10,17 +11,17 @@
     <string name="action_start">Start</string>
 
 
+
+
+
+    <string name="code_enter">Enter One-Time-Use Code</string>
+    ////// START MENU //////
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="password_confirm">Confirm Password</string>
-    <string name="password_new">New Password</string>
     <string name="password_show">Show Password</string>
-    <string name="code_enter">Enter One-Time-Use Code</string>
 
-
-    <string name="register">Create an Account</string>
+    ////// LOGIN //////
     <string name="login">Login</string>
-    <string name="login_failure">One or more of your account details were incorrect</string>
     <string name="login_forgotten">Forgotten your login details?</string>
     <string name="login_remember">Remember me</string>
     <string name="login_reset_prompt">Enter your email address. We will send you a one-time use code
@@ -29,6 +30,22 @@
         address you previously provided. If you have not received one, either re-enter your email
         address or press resend code and we will send you another one.</string>
 
+    <string name="login_missing">Please fill in all text fields</string>
+    <string name="login_failure">One or more of your account details were incorrect</string>
+
+
+    ////// REGISTRATION //////
+    <string name="password_confirm">Confirm Password</string>
+    <string name="password_new">New Password</string>
+
+    <string name="register">Create an Account</string>
+    <string name="register_empty_field">Please fill in all fields</string>
+    <string name="register_invalid_email">Please enter a valid email address</string>
+    <string name="register_too_short">Please make your password at lease 8 characters long</string>
+    <string name="register_no_match">Please make sure "confirm Password" matches "Password"</string>
+    <string name="register_already_exists">This email has been used to create an account before</string>
+
+    ////// MAIN MENU //////
     <string name="map">map</string>
     <string name="pois">Points Of Interest</string>
     <string name="pois_visited">Locations Visited: </string>
@@ -41,6 +58,15 @@
     <string name="user_new">Are you a new user?</string>
 
     <string name="trails">Trails</string>
+
+    ////// LOG TAGS //////
+    <string name="log_main">Main.Info</string>
+    <string name="log_login">Login.Info</string>
+    <string name="log_register">Register.Info</string>
+
+    ////// LOGS //////
+    <string name="log_register_success">createUserWithEmail:success</string>
+    <string name="log_register_failure">createUserWithEmail:failure</string>
 
     <string name="xml_logout">LogOut</string>
     <string name="xml_refresh">Refresh</string>

@@ -10,6 +10,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 
 class MainMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,9 +36,9 @@ class MainMenuActivity : AppCompatActivity() {
                 return true
             }
             R.id.action_logout -> {
-                val snackbar =
-                    Snackbar.make(view, getString(R.string.xml_logout), Snackbar.LENGTH_LONG)
-                snackbar.show()
+                FirebaseAuth.getInstance().signOut()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
                 return true
             }
             R.id.settingsBtn -> {

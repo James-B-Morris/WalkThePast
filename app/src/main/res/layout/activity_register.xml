@@ -21,7 +21,7 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
-        android:onClick="goToMainMenuActivity"
+        android:onClick="registerClick"
         android:text="@string/account_create"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
