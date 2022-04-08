@@ -3,6 +3,7 @@ package com.example.walkthepast
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -38,6 +39,7 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         val toolbar = findViewById<Toolbar>(R.id.registerToolBar)
         setSupportActionBar(toolbar)

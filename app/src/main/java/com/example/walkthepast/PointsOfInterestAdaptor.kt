@@ -9,7 +9,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
-class PointsOfInterestAdaptor(private val imageModelArrayList: MutableList<PointsOfInterestModel>) : RecyclerView.Adapter<PointsOfInterestAdaptor.ViewHolder>() {
+
+class PointsOfInterestAdaptor(private val poiModelArrayList: MutableList<PointsOfInterestModel>) : RecyclerView.Adapter<PointsOfInterestAdaptor.ViewHolder>() {
+
     /*
      * Inflate the view using the layout define in row_layout.xml
      */
@@ -22,12 +24,12 @@ class PointsOfInterestAdaptor(private val imageModelArrayList: MutableList<Point
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val images = imageModelArrayList[position]
+        val pois = imageModelArrayList[position]
         Log.i("POINTS OF INTEREST.INFO: ", "On Bind " + images.getImageUrl())
 
-        holder.rowText.text = images.getName()
+        holder.rowText.text = pois.getName()
         //Picasso.get().load("https://images6.fanpop.com/image/photos/34300000/Kitten-cats-34352405-1600-1200.jpg").into(holder.rowImage)
-        Picasso.get().load(images.getImageUrl()).into(holder.rowImage)
+        Picasso.get().load(pois.getImageUrl()).into(holder.rowImage)
     }
 
     /*
@@ -35,7 +37,7 @@ class PointsOfInterestAdaptor(private val imageModelArrayList: MutableList<Point
      */
     override fun getItemCount(): Int {
         Log.i("POINTS OF INTEREST.INFO: ", "Count")
-        return imageModelArrayList.size
+        return poiModelArrayList.size
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
