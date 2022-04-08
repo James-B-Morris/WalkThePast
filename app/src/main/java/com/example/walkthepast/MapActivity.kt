@@ -46,10 +46,17 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
 
+        initToolbar()
+        initMap()
+    }
+
+    private fun initToolbar() {
         val toolbar = findViewById<Toolbar>(R.id.mapToolBar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
 
+    private fun initMap() {
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
@@ -121,7 +128,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                 return
             }
             
-            //once the last location is aquired
+            //once the last location is acquired
             mFusedLocationClient.lastLocation.addOnCompleteListener(this) { task -> 
                 val location: Location? = task.result
                 if (location == null) {

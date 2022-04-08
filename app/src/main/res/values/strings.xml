@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Walk The Past</string>
-
     <string name="background_description">The background image</string>
+
+    ////// ADMIN EMAIL LIST //////
+    <string name="admin1">admin@admin.com</string>
 
     ////// PROGRAM ACTIONS //////
     <string name="action_back">Back</string>
@@ -10,63 +12,81 @@
     <string name="action_resend_code">Resend Code</string>
     <string name="action_start">Start</string>
 
+    //////  DATABASE FILEPATHS //////
+    <string name="path_points_of_interest">PointsOfInterest</string>
 
-
-
-
-    <string name="code_enter">Enter One-Time-Use Code</string>
     ////// START MENU //////
+    <string name="user_existing">Are you an existing user?</string>
+    <string name="login">Login</string>
+    <string name="user_new">Are you a new user?</string>
+    <string name="register">Create an Account</string>
+
+    <string name="email">Email</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="password_show">Show Password</string>
 
     ////// LOGIN //////
-    <string name="login">Login</string>
     <string name="login_forgotten">Forgotten your login details?</string>
     <string name="login_remember">Remember me</string>
+
+    <string name="login_missing">Please fill in all text fields</string>
+    <string name="login_failure">One or more of your account details were incorrect</string>
+
+    ////// LOGIN RESET //////
     <string name="login_reset_prompt">Enter your email address. We will send you a one-time use code
         which will be used to verify that you are the one updating the login details of this account.</string>
     <string name="login_reset_code_prompt">Enter the one-time use code you received, via the email
         address you previously provided. If you have not received one, either re-enter your email
         address or press resend code and we will send you another one.</string>
+    <string name="code_enter">Enter One-Time-Use Code</string>
 
-    <string name="login_missing">Please fill in all text fields</string>
-    <string name="login_failure">One or more of your account details were incorrect</string>
 
 
     ////// REGISTRATION //////
     <string name="password_confirm">Confirm Password</string>
     <string name="password_new">New Password</string>
+    <string name="account_create">Create Account</string>
 
-    <string name="register">Create an Account</string>
     <string name="register_empty_field">Please fill in all fields</string>
+    <string name="register_invalid_username">"Please enter a username between 3 and 12 characters"</string>
     <string name="register_invalid_email">Please enter a valid email address</string>
     <string name="register_too_short">Please make your password at lease 8 characters long</string>
     <string name="register_no_match">Please make sure "confirm Password" matches "Password"</string>
     <string name="register_already_exists">This email has been used to create an account before</string>
 
     ////// MAIN MENU //////
-    <string name="map">map</string>
+    <string name="trails">Trails</string>
     <string name="pois">Points Of Interest</string>
+    <string name="map">map</string>
+
+
+    ////// SETTINGS //////
     <string name="pois_visited">Locations Visited: </string>
     <string name="password_reset">Reset Password</string>
 
-    <string name="account_create">Create Account</string>
-    <string name="email">Email</string>
 
-    <string name="user_existing">Are you an existing user?</string>
-    <string name="user_new">Are you a new user?</string>
 
-    <string name="trails">Trails</string>
+
+
+
 
     ////// LOG TAGS //////
     <string name="log_main">Main.Info</string>
     <string name="log_login">Login.Info</string>
     <string name="log_register">Register.Info</string>
+    <string name="log_points_of_interest">PointsOfInterest.Info</string>
 
     ////// LOGS //////
+    <string name="log_register_user_success">DocumentSnapshot added with ID: </string>
+    <string name="log_register_user_failure">Error adding document: </string>
     <string name="log_register_success">createUserWithEmail:success</string>
     <string name="log_register_failure">createUserWithEmail:failure</string>
+
+    <string name="log_created">On Create</string>
+    <string name="log_document_error">Error getting documents</string>
+
+
 
     <string name="xml_logout">LogOut</string>
     <string name="xml_refresh">Refresh</string>

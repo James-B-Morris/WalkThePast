@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
+
 
 class PointsOfInterestAdaptor(private val poiModelArrayList: MutableList<PointsOfInterestModel>) : RecyclerView.Adapter<PointsOfInterestAdaptor.ViewHolder>() {
 
@@ -16,22 +18,25 @@ class PointsOfInterestAdaptor(private val poiModelArrayList: MutableList<PointsO
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflator = LayoutInflater.from(parent.context)
         val view = inflator.inflate(R.layout.row_layout, parent, false)
-
+        Log.i("POINTS OF INTEREST.INFO: ", "On Create")
+        
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val pois = poiModelArrayList[position]
+        val pois = imageModelArrayList[position]
+        Log.i("POINTS OF INTEREST.INFO: ", "On Bind " + images.getImageUrl())
 
-        Log.i("POIS: ", "On Bind")
-        holder.rowImage.setImageResource(pois.getImages())
-        holder.rowText.text = pois.getNames()
+        holder.rowText.text = pois.getName()
+        //Picasso.get().load("https://images6.fanpop.com/image/photos/34300000/Kitten-cats-34352405-1600-1200.jpg").into(holder.rowImage)
+        Picasso.get().load(pois.getImageUrl()).into(holder.rowImage)
     }
 
     /*
      * gets the number of models in the array
      */
     override fun getItemCount(): Int {
+        Log.i("POINTS OF INTEREST.INFO: ", "Count")
         return poiModelArrayList.size
     }
 
