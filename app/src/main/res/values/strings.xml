@@ -71,6 +71,11 @@
     <string name="pois">Points Of Interest</string>
     <string name="map">map</string>
 
+    ////// TRAILS //////
+    <string name="trail_historical">Historical</string>
+    <string name="trail_entertaining">Entertaining</string>
+    <string name="trail_adventurous">Adventurous</string>
+
     ////// MAP //////
     <string name="map_curr_location">Current Location</string>
     <string name="map_loc_switch">Location Switch</string>
