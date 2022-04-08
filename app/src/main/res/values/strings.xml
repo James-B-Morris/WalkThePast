@@ -12,6 +12,9 @@
     <string name="action_resend_code">Resend Code</string>
     <string name="action_start">Start</string>
 
+    //////  DATABASE FILEPATHS //////
+    <string name="path_points_of_interest">PointsOfInterest</string>
+
     ////// START MENU //////
     <string name="user_existing">Are you an existing user?</string>
     <string name="login">Login</string>
@@ -72,12 +75,18 @@
     <string name="log_main">Main.Info</string>
     <string name="log_login">Login.Info</string>
     <string name="log_register">Register.Info</string>
+    <string name="log_points_of_interest">PointsOfInterest.Info</string>
 
     ////// LOGS //////
     <string name="log_register_user_success">DocumentSnapshot added with ID: </string>
     <string name="log_register_user_failure">Error adding document: </string>
     <string name="log_register_success">createUserWithEmail:success</string>
     <string name="log_register_failure">createUserWithEmail:failure</string>
+
+    <string name="log_created">On Create</string>
+    <string name="log_document_error">Error getting documents</string>
+
+
 
     <string name="xml_logout">LogOut</string>
     <string name="xml_refresh">Refresh</string>

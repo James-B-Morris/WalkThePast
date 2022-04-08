@@ -2,21 +2,21 @@ package com.example.walkthepast
 
 class PointsOfInterestModel {
     var modelName:String? = null
-    private var modelImage: Int = 0
+    private var modelImageUrl: String? = null
 
-    fun getNames(): String {
+    fun getName(): String {
         return modelName.toString()
     }
 
-    fun setNames(name:String) {
+    fun setName(name:String) {
         this.modelName = name
     }
 
-    fun getImages(): Int {
-        return modelImage
+    fun getImageUrl(): String? {
+        return modelImageUrl
     }
 
-    fun setImages(image_drawable: Int) {
-        this.modelImage = image_drawable
+    fun setImageUrl(image_url: String) {
+        this.modelImageUrl = image_url
     }
 }
