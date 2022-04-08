@@ -77,6 +77,10 @@ class PointsOfInterestActivity :AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+
+    /**
+     * temporary population method, will be replaced once the new one is finished
+     */
     private fun populateRecycler() : ArrayList<PointsOfInterestModel> {
         val pois = ArrayList<PointsOfInterestModel>()
 
@@ -106,7 +110,7 @@ class PointsOfInterestActivity :AppCompatActivity() {
             "Swansea Museum"
         ) //
 
-        for (i in 0 until poiImageUrls.size) {
+        for (i in poiImageUrls.indices) {
             val trailModel = PointsOfInterestModel()
             trailModel.setName(poiNames[i])
             trailModel.setImageUrl(poiImageUrls[i])
@@ -119,30 +123,29 @@ class PointsOfInterestActivity :AppCompatActivity() {
 
     private fun populateRecyclerNew() : ArrayList<PointsOfInterestModel> {
         val pois = ArrayList<PointsOfInterestModel>()
-        var newPoi = PointsOfInterestModel()
+        val newPoi = PointsOfInterestModel()
 
         db.collection(getString(R.string.path_points_of_interest))
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {
                     Log.d(getString(R.string.log_points_of_interest),
-                        "${document.id} => ${document.get("image")}")
+                        "${document.id} => ${document.get(getString(R.string.db_poi_image))}")
 
-                    newPoi.setName(document.get("title") as String)
-                    newPoi.setImageUrl(document.get("image") as String)
+                    newPoi.setName(document.get(getString(R.string.db_poi_title)) as String)
+                    newPoi.setImageUrl(document.get(getString(R.string.db_poi_image)) as String)
 
                     pois.add(newPoi)
                     Log.d(getString(R.string.log_points_of_interest),
                         pois[document.id.toInt()].getImageUrl() as String)
                 }
-                Log.d(getString(R.string.log_points_of_interest), "hi")
             }
-            .addOnFailureListener { e ->
+            .addOnFailureListener {
                 Log.w(getString(R.string.log_points_of_interest),
                     getString(R.string.log_document_error))
             }
 
-        Log.d(getString(R.string.log_points_of_interest), "return")
+        Log.d(getString(R.string.log_points_of_interest), getString(R.string.log_return))
         pois.sortBy{ pois -> pois.modelName }
         return pois
     }

@@ -66,10 +66,10 @@ class ViewTrailsActivity : AppCompatActivity() {
     private fun populateRecycler() : ArrayList<ViewTrailsModel> {
         val list = ArrayList<ViewTrailsModel>()
 
-        val trailImages = arrayOf(R.drawable.profile_icon, R.drawable.profile_icon, R.drawable.profile_icon) // pull images from the database
-        val trailNames = arrayOf("apple", "banana", "carrot") // pull trial names from the database
+        val trailImages = arrayOf(R.drawable.historical, R.drawable.entertainment, R.drawable.adventure) // pull images from the database
+        val trailNames = arrayOf("Historical", "Entertaining", "Adventurous") // pull trial names from the database
 
-        for (i in 0..(trailImages.size - 1)) {
+        for (i in trailImages.indices) {
             val trailModel = ViewTrailsModel()
             trailModel.setNames(trailNames[i])
             trailModel.setImages(trailImages[i])

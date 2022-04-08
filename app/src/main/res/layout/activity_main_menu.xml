@@ -19,8 +19,8 @@
 
     <Button
         android:id="@+id/mainTrailsViewBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:layout_marginTop="60dp"
         android:onClick="goToViewTrailsActivity"
         android:text="@string/trails"
@@ -30,8 +30,8 @@
 
     <Button
         android:id="@+id/mainMenuMapBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:onClick="goToMap"
         android:text="@string/map"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,8 +40,8 @@
 
     <Button
         android:id="@+id/poisBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:onClick="goToPointsOfInterestActivity"
         android:text="@string/pois"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,8 +50,9 @@
 
     <Button
         android:id="@+id/mainMenuSettingsBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:onClick="goToSettings"
         android:text="@string/xml_settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

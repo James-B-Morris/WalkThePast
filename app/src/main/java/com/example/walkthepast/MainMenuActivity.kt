@@ -55,7 +55,7 @@ class MainMenuActivity : AppCompatActivity() {
     }
 
     /**
-     * launches 'ViewTrailsActvity'
+     * launches 'ViewTrailsActivity'
      */
     fun goToViewTrailsActivity(view:View) {
         val intent = Intent(this, ViewTrailsActivity::class.java)
@@ -71,10 +71,18 @@ class MainMenuActivity : AppCompatActivity() {
     }
 
     /**
-     * launxhes 'mapActivity'
+     * launches 'mapActivity'
      */
     fun goToMap(view:View) {
         val intent = Intent(this, MapActivity::class.java)
+        startActivity(intent)
+    }
+
+    /**
+     * launches 'SettingsActivity'
+     */
+    fun goToSettings(view: View) {
+        val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
     }
 }

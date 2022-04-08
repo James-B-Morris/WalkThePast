@@ -103,10 +103,11 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/showPasswordCheckBox"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:checked="false"
+        android:onClick="showPasswordBtnClicked"
         android:text="@string/password_show"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

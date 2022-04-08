@@ -71,14 +71,13 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             .addOnSuccessListener { result ->
                 for (document in result) {
                     Log.d(getString(R.string.log_map),
-                        "${document.id} => ${document.get("location")}")
+                        "${document.id} => ${document.get(getString(R.string.db_poi_loc))}")
 
-                    location = (document.get("location") as GeoPoint)
+                    location = (document.get(getString(R.string.db_poi_loc)) as GeoPoint)
                     latLong = LatLng(location.latitude, location.longitude)
-                    title = (document.get("title") as String)
+                    title = (document.get(getString(R.string.db_poi_title)) as String)
                     mMap.addMarker(MarkerOptions().position(latLong).title(title))
                 }
-                Log.d(getString(R.string.log_points_of_interest), "hi")
             }
             .addOnFailureListener { e ->
                 Log.w(getString(R.string.log_points_of_interest),
@@ -143,7 +142,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun toCoFo() {
         // to get new location pull out of Google Maps URL or right click the point
         val coFo = LatLng(51.619543, -3.878634)
-        mMap.addMarker(MarkerOptions().position(coFo).title("Computational Foundary"))
+        mMap.addMarker(MarkerOptions().position(coFo).title(getString(R.string.map_cofo)))
         //moves the camera to the specified location
         mMap.moveCamera(CameraUpdateFactory.newLatLng(coFo))
         // zoom levels 1--20 as float
@@ -172,20 +171,21 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
                     val lat = location.latitude
                     val long = location.longitude
                     
-                    Log.i("LocLatLocation", "$lat and $long")
+                    Log.i(getString(R.string.log_map_loc), "$lat & $long")
                     
                     val lastLoc = LatLng(lat, long)
                     
                     //update camera
                     mMap.animateCamera(CameraUpdateFactory.newLatLng(lastLoc))
                     mMap.animateCamera(CameraUpdateFactory.zoomTo(15F))
-                    mMap.addMarker(MarkerOptions().position(lastLoc).title("Current Location"))
+                    mMap.addMarker(MarkerOptions().position(lastLoc)
+                        .title(getString(R.string.map_curr_location)))
                 }
             }
             // couldn't get location, so go to Settings (may be deprecated)
         } else {
             val mRootView = findViewById<View>(R.id.map)
-            val locSnack = Snackbar.make(mRootView, "R.string.location_switch", 
+            val locSnack = Snackbar.make(mRootView, getString(R.string.map_loc_switch),
                 Snackbar.LENGTH_LONG)
             locSnack.show()
             
@@ -229,7 +229,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             val long = mLastLocation.longitude
             
             val lastLoc = LatLng(lat, long)
-            Log.i("LocLatLocationCallback", "$lat and $long")
+            Log.i(getString(R.string.log_map_loc), "$lat & $long")
         }
     }
     

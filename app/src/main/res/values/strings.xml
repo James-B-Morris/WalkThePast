@@ -14,6 +14,19 @@
 
     //////  DATABASE FILEPATHS //////
     <string name="path_points_of_interest">PointsOfInterest</string>
+    <string name="path_users">Users</string>
+
+    ////// DATABASE FIELDS //////
+    <string name="db_poi_approved">approved</string>
+    <string name="db_poi_desc">description</string>
+    <string name="db_poi_image">image</string>
+    <string name="db_poi_loc">location</string>
+    <string name="db_poi_title">title</string>
+
+    <string name="db_users_admin">admin</string>
+    <string name="db_users_email">email</string>
+    <string name="db_users_name">username</string>
+    <string name="db_users_visited">visited</string>
 
     ////// START MENU //////
     <string name="user_existing">Are you an existing user?</string>
@@ -41,8 +54,6 @@
         address or press resend code and we will send you another one.</string>
     <string name="code_enter">Enter One-Time-Use Code</string>
 
-
-
     ////// REGISTRATION //////
     <string name="password_confirm">Confirm Password</string>
     <string name="password_new">New Password</string>
@@ -60,15 +71,21 @@
     <string name="pois">Points Of Interest</string>
     <string name="map">map</string>
 
+    ////// MAP //////
+    <string name="map_curr_location">Current Location</string>
+    <string name="map_loc_switch">Location Switch</string>
+    <string name="map_cofo">Computational Foundry</string>
 
     ////// SETTINGS //////
     <string name="pois_visited">Locations Visited: </string>
     <string name="password_reset">Reset Password</string>
 
-
-
-
-
+    ////// TOOLBAR //////
+    <string name="xml_logout">LogOut</string>
+    <string name="xml_refresh">Refresh</string>
+    <string name="xml_profile">Profile</string>
+    <string name="xml_linked">Linked Accounts</string>
+    <string name="xml_settings">Settings</string>
 
 
     ////// LOG TAGS //////
@@ -77,21 +94,31 @@
     <string name="log_register">Register.Info</string>
     <string name="log_points_of_interest">PointsOfInterest.Info</string>
     <string name="log_map">Map.Info</string>
+    <string name="log_map_loc">LocLatLocation</string>
+    <string name="log_settings">Settings.Info</string>
+
+    ////// STATUS TAGS //////
+    <string name="log_created">in onCreate</string>
+    <string name="log_started">in onStart</string>
+    <string name="log_resume">in onResume</string>
+    <string name="log_pause">in onPause</string>
+    <string name="log_stop">in onStop</string>
+    <string name="log_destroy">in onDestroy</string>
+    <string name="log_restart">in onRestart</string>
 
     ////// LOGS //////
+    <string name="log_user">User </string>
+    <string name="log_current_login"> currently logged in</string>
+    <string name="log_login_success">signInWithEmail:Success</string>
+    <string name="log_login_failure">signInWithEmail:failure</string>
     <string name="log_register_user_success">DocumentSnapshot added with ID: </string>
     <string name="log_register_user_failure">Error adding document: </string>
     <string name="log_register_success">createUserWithEmail:success</string>
     <string name="log_register_failure">createUserWithEmail:failure</string>
-
-    <string name="log_created">On Create</string>
+    <string name="log_return">return</string>
     <string name="log_document_error">Error getting documents</string>
 
-
-
-    <string name="xml_logout">LogOut</string>
-    <string name="xml_refresh">Refresh</string>
-    <string name="xml_profile">Profile</string>
-    <string name="xml_linked">Linked Accounts</string>
-    <string name="xml_settings">Settings</string>
+    ////// ERROR MESSAGES //////
+    <string name="err_kitten">https://images6.fanpop.com/image/photos/34300000/Kitten-cats-34352405-1600-1200.jpg</string>
+    <string name="err_user_not_found">User Not Found</string>
 </resources>

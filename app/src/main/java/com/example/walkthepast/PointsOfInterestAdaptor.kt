@@ -28,7 +28,6 @@ class PointsOfInterestAdaptor(private val poiModelArrayList: MutableList<PointsO
         Log.i("POINTS OF INTEREST.INFO: ", "On Bind " + pois.getImageUrl())
 
         holder.rowText.text = pois.getName()
-        //Picasso.get().load("https://images6.fanpop.com/image/photos/34300000/Kitten-cats-34352405-1600-1200.jpg").into(holder.rowImage)
         Picasso.get().load(pois.getImageUrl()).into(holder.rowImage)
     }
 

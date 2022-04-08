@@ -1,6 +1,5 @@
 package com.example.walkthepast
 
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
@@ -17,22 +16,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
 
     // Authentication Vars
     private var mAuth = FirebaseAuth.getInstance()
-    private var currUser = mAuth.currentUser
 
     // login deets
     private val emailPattern = "[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+"
     private lateinit var emailText : EditText
     private lateinit var passText : EditText
     private lateinit var loginBtn : Button
-
-    // switch for making password visible or not
-    private var passwordVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,13 +69,16 @@ class LoginActivity : AppCompatActivity() {
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Log.d(TAG, "signInWithEmail:Success")
+                    Log.d(getString(R.string.log_login), getString(R.string.log_login_success))
                     closeKeyBoard()
                     val intent = Intent(this, MainMenuActivity::class.java)
                     startActivity(intent)
                 }
                 else {
-                    Log.w(TAG, "SignInWithEmail:failure", task.exception)
+                    Log.w(getString(R.string.log_login),
+                        getString(R.string.log_login_failure),
+                        task.exception)
+
                     closeKeyBoard()
                     displayMessage(loginBtn, getString(R.string.login_failure))
                 }
@@ -104,14 +101,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun showPasswordBtnClicked(view:View) {
-        val loginBtn = findViewById<TextView>(R.id.loginPasswordTextBox)
-        if (passwordVisible) {
-            passwordVisible = false
-            loginBtn.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
+        val passTxtBx = findViewById<TextView>(R.id.loginPasswordTextBox)
+        if (passTxtBx.inputType == InputType.TYPE_CLASS_TEXT) {
+            passTxtBx.inputType = InputType.TYPE_TEXT_VARIATION_PASSWORD
         }
         else{
-            passwordVisible = true
-            loginBtn.inputType = InputType.TYPE_CLASS_TEXT
+            passTxtBx.inputType = InputType.TYPE_CLASS_TEXT
         }
     }
 

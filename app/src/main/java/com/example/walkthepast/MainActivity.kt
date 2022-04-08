@@ -18,44 +18,46 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-        Log.i(getString(R.string.log_main), "in onCreate")
+        Log.i(getString(R.string.log_main), getString(R.string.log_created))
     }
 
     override fun onStart() {
         super.onStart()
-        Log.i(getString(R.string.log_main), "in onStart")
+        Log.i(getString(R.string.log_main), getString(R.string.log_started))
         val intent = Intent(this, MainMenuActivity::class.java)
 
         if (currentUser != null) {
-            Log.i("MainInfo",
-                ("User " + currentUser!!.email.toString() +  " currently logged in"))
+            Log.i(getString(R.string.log_main),
+                (getString(R.string.log_user)
+                        + currentUser!!.email.toString()
+                        + getString(R.string.log_current_login)))
             startActivity(intent)
         }
     }
 
     override fun onResume() {
         super.onResume()
-        Log.i(getString(R.string.log_main), "in onResume")
+        Log.i(getString(R.string.log_main), getString(R.string.log_resume))
     }
 
     override fun onPause() {
         super.onPause()
-        Log.i(getString(R.string.log_main), "in onPause")
+        Log.i(getString(R.string.log_main), getString(R.string.log_pause))
     }
 
     override fun onStop() {
         super.onStop()
-        Log.i(getString(R.string.log_main), "in onStop")
+        Log.i(getString(R.string.log_main), getString(R.string.log_stop))
     }
 
     override  fun onDestroy() {
         super.onDestroy()
-        Log.i(getString(R.string.log_main), "in onDestroy")
+        Log.i(getString(R.string.log_main), getString(R.string.log_destroy))
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.i("MainInfo", "in onRestart")
+        Log.i(getString(R.string.log_main), getString(R.string.log_restart))
     }
 
     fun goToLoginActivity(view: View) {

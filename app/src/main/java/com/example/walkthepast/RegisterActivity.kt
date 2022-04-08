@@ -95,10 +95,10 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun createAccount(username : String, email : String, password : String) {
         val newUser = hashMapOf(
-            "admin" to false,
-            "username" to username,
-            "email" to email,
-            "visited" to {}
+            getString(R.string.db_users_admin) to false,
+            getString(R.string.db_users_name) to username,
+            getString(R.string.db_users_email) to email,
+            getString(R.string.db_users_visited) to {}
         )
 
         // save user's authentication details
@@ -110,7 +110,7 @@ class RegisterActivity : AppCompatActivity() {
                         getString(R.string.log_register_success))
 
                     // add user to the database
-                    db.collection("Users")
+                    db.collection(getString(R.string.path_users))
                         .document(email)
                         .set(newUser)
                         .addOnSuccessListener {
