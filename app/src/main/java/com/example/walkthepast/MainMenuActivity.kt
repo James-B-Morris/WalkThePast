@@ -42,6 +42,10 @@ class MainMenuActivity : AppCompatActivity() {
                 startActivity(intent)
                 return true
             }
+            R.id.profile -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+            }
             R.id.settingsBtn -> {
                 val intent = Intent(this, SettingsActivity::class.java)
                 startActivity(intent)

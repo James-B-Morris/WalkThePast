@@ -1,5 +1,6 @@
 package com.example.walkthepast
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -10,6 +11,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -58,10 +60,18 @@ class PointsOfInterestActivity :AppCompatActivity() {
                 return true
             }
             R.id.action_logout -> {
-                val snackbar =
-                    Snackbar.make(view, getString(R.string.xml_logout), Snackbar.LENGTH_LONG)
-                snackbar.show()
+                FirebaseAuth.getInstance().signOut()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
                 return true
+            }
+            R.id.profile -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.settingsBtn -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
             }
         }
         return super.onOptionsItemSelected(item)

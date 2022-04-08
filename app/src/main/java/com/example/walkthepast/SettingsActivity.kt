@@ -1,5 +1,6 @@
 package com.example.walkthepast
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -7,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 
 /**
  * MAKE SURE TO IMPLEMENT PREFERENCES
@@ -36,9 +38,9 @@ class SettingsActivity : AppCompatActivity() {
                 return true
             }
             R.id.action_logout -> {
-                val snackbar =
-                    Snackbar.make(view, getString(R.string.xml_logout), Snackbar.LENGTH_LONG)
-                snackbar.show()
+                FirebaseAuth.getInstance().signOut()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
                 return true
             }
         }
