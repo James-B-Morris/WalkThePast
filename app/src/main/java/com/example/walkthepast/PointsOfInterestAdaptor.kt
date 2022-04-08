@@ -24,8 +24,8 @@ class PointsOfInterestAdaptor(private val poiModelArrayList: MutableList<PointsO
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val pois = imageModelArrayList[position]
-        Log.i("POINTS OF INTEREST.INFO: ", "On Bind " + images.getImageUrl())
+        val pois = poiModelArrayList[position]
+        Log.i("POINTS OF INTEREST.INFO: ", "On Bind " + pois.getImageUrl())
 
         holder.rowText.text = pois.getName()
         //Picasso.get().load("https://images6.fanpop.com/image/photos/34300000/Kitten-cats-34352405-1600-1200.jpg").into(holder.rowImage)
