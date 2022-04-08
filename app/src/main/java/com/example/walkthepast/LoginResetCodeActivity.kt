@@ -1,6 +1,7 @@
 package com.example.walkthepast
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
@@ -11,6 +12,7 @@ class LoginResetCodeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reset_login_code)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         val toolbar = findViewById<Toolbar>(R.id.resetLoginCodeToolBar)
         setSupportActionBar(toolbar)

@@ -1,5 +1,6 @@
 package com.example.walkthepast
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PointsOfInterestAdaptor(private val imageModelArrayList: MutableList<PointsOfInterestModel>) : RecyclerView.Adapter<PointsOfInterestAdaptor.ViewHolder>() {
+class PointsOfInterestAdaptor(private val poiModelArrayList: MutableList<PointsOfInterestModel>) : RecyclerView.Adapter<PointsOfInterestAdaptor.ViewHolder>() {
 
     /*
      * Inflate the view using the layout define in row_layout.xml
@@ -20,21 +21,22 @@ class PointsOfInterestAdaptor(private val imageModelArrayList: MutableList<Point
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val info = imageModelArrayList[position]
+        val pois = poiModelArrayList[position]
 
-        holder.imgView.setImageResource(info.getImages())
-        holder.txtMsg.text = info.getNames()
+        Log.i("POIS: ", "On Bind")
+        holder.rowImage.setImageResource(pois.getImages())
+        holder.rowText.text = pois.getNames()
     }
 
     /*
      * gets the number of models in the array
      */
     override fun getItemCount(): Int {
-        return imageModelArrayList.size
+        return poiModelArrayList.size
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var imgView = itemView.findViewById<View>(R.id.rowImage) as ImageView
-        var txtMsg = itemView.findViewById<View>(R.id.rowText) as TextView
+        var rowImage = itemView.findViewById<View>(R.id.rowImage) as ImageView
+        var rowText = itemView.findViewById<View>(R.id.rowText) as TextView
     }
 }
