@@ -76,6 +76,7 @@
     <string name="log_login">Login.Info</string>
     <string name="log_register">Register.Info</string>
     <string name="log_points_of_interest">PointsOfInterest.Info</string>
+    <string name="log_map">Map.Info</string>
 
     ////// LOGS //////
     <string name="log_register_user_success">DocumentSnapshot added with ID: </string>

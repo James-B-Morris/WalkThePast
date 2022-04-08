@@ -30,9 +30,9 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.snackbar.Snackbar
-
-
-
+import com.google.firebase.firestore.GeoPoint
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 
 class MapActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -60,6 +60,29 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        val db = Firebase.firestore
+        var location : GeoPoint
+        var latLong : LatLng
+        var title : String
+        db.collection(getString(R.string.path_points_of_interest))
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d(getString(R.string.log_map),
+                        "${document.id} => ${document.get("location")}")
+
+                    location = (document.get("location") as GeoPoint)
+                    latLong = LatLng(location.latitude, location.longitude)
+                    title = (document.get("title") as String)
+                    mMap.addMarker(MarkerOptions().position(latLong).title(title))
+                }
+                Log.d(getString(R.string.log_points_of_interest), "hi")
+            }
+            .addOnFailureListener { e ->
+                Log.w(getString(R.string.log_points_of_interest),
+                    getString(R.string.log_document_error))
+            }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -89,10 +112,11 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        mMap.setOnMapClickListener { point ->
-            val marker = MarkerOptions().position(point).title("NewMarkerPoint")
-            mMap.addMarker(marker)
-        }
+        // CREATES A NEW MARKER POINT WHERE EVER THE USER TAPS ON THE MAP
+        // mMap.setOnMapClickListener { point ->
+        //    val marker = MarkerOptions().position(point).title("NewMarkerPoint")
+        //    mMap.addMarker(marker)
+        //}
 
         //handle home FAB
         val fabHome: View = findViewById(R.id.homeFAB)
